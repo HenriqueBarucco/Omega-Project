@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+    photos-api:
+        container_name: omega-api-photos
+        user: 'node'
+        restart: unless-stopped
+        command: 'npm start'
+        ports:
+            - 5050:5050
+        volumes:
+            - ./photos-api:/opt/photos-api
+        working_dir: /opt/photos-api
+        image: node:17.2.0-alpine
+    face-api:
+        container_name: omega-api-python
+        restart: unless-stopped
+        command: 'python src/main.py'
+        env_file: .env
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 4000:4000
+        volumes:
+            - ./face-api:/opt/face-api
+        working_dir: /opt/face-api

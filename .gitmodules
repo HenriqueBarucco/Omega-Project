@@ -1,0 +1,6 @@
+[submodule "Omega-Photo-API"]
+	path = Omega-Photo-API
+	url = git@github.com:HenriqueBarucco/Omega-Photo-API.git
+[submodule "project_omega"]
+	path = project_omega
+	url = git@github.com:rafaelvizu/project_omega.git

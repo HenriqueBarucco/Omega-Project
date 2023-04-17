@@ -13,6 +13,7 @@ services:
             - ./storage:/opt/photos-api/photos
         working_dir: /opt/photos-api
         image: node:17.2.0-alpine
+        privileged: true
     python-api:
         container_name: python-api
         restart: unless-stopped
@@ -25,3 +26,12 @@ services:
             - ./project_omega:/opt/python-api
             - ./storage:/opt/python-api/photos
         working_dir: /opt/python-api
+        privileged: true
+
+volumes:
+  storage:
+        driver: local
+        driver_opts:
+            type: none
+            device: .
+            o: uid=<UID>,gid=<GID>

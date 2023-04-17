@@ -18,9 +18,7 @@ services:
         restart: unless-stopped
         command: 'python src/main.py'
         env_file: .env
-        build:
-            context: .
-            dockerfile: Dockerfile
+        image: omega-project_python-api:latest
         ports:
             - 5000:5000
         volumes:

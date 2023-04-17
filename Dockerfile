@@ -1,5 +1,5 @@
 # get base image
-FROM raspbian/stretch
+FROM python:3.8-slim-buster
 
 RUN apt-get -y update
 RUN apt-get install -y --fix-missing \

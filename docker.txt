@@ -1,0 +1,1 @@
+docker load < omega-python.tar

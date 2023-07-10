@@ -35,13 +35,7 @@ RUN apt-get install -y --fix-missing \
 RUN pip3 install setuptools --upgrade
 RUN pip3 install cython --upgrade
 
-
-#Install dlib
-RUN cd ~ && \
-    mkdir -p dlib && \
-    git clone -b 'v19.9' --single-branch https://github.com/davisking/dlib.git dlib/ && \
-    cd  dlib/ && \
-    python3 setup.py install --yes
+RUN pip3 install dlib --verbose
     
 RUN mkdir -p /opt/python-api/photos
 
